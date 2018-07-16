@@ -43,7 +43,7 @@ extension UIViewController: SelfAware {
 }
 ```
 
-然后，我需要去实现 `swizzleMethod` 方法。在执行方法交换的时候，我们应当使用 `dispatch_once` 。然而，从 swift 3.x 起，我们在 API 中已无法找到 `dispatch_once` 相关 API。那我们如何去解决呢？我们知道，swift 中的静态不可变变量底层实现上实际上就是和 `dispatch_once` 类似，所以，我们可以用静态不可变变量去实现。
+然后，我需要去实现 `swizzleMethod` 方法。在执行方法交换的时候，我们应当使用 `dispatch_once` 。然而，从 swift 3.x 起，我们在 API 中已无法找到 `dispatch_once` 相关 API。那我们如何去解决呢？我们知道，swift 中的静态不可变变量底层实现上实际上就是和 `dispatch_once` 类似，所以，我们可以用静态不可变变量去实现。
 
 ```swift
 @objc func swizzled_viewWillAppear(_ animated: Bool) {
@@ -84,4 +84,4 @@ extension UIViewController: SelfAware {
 
 # 协议
 
-SwiftLoadHook 遵守 MIT 协议。查看 LICENSE 获取更多细节。
+SwiftLoadHook 遵守 MIT 协议。查看 LICENSE 获取更多细节。
