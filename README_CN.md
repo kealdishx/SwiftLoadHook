@@ -2,7 +2,7 @@
 
 # 目的
 
-此库以 hack 的方式来实现类似 `Load()` 或 `Initialize()` 方法的功能。
+此库以 hack 的方式来实现类似 `Load()` 或 `Initialize()` 方法的功能。
 
 # 由来
 
@@ -21,13 +21,13 @@
 
 然后，你的目标类必须要遵守 `SelfAware` 协议，并且实现 `SelfAware` 协议中的方法。
 
-最后，在 `SelfAware` 协议中的 `awake()` 中实现你想要的功能逻辑。
+最后，在 `SelfAware` 协议中的 `awake()` 中实现你想要的功能逻辑。
 
 # 例子
 
 这个例子是用来帮助你去理解如何使用它，你在 `Example` 目录下可以找到这部分代码。在这个例子中，我想实现的逻辑是交换 `UIViewController` 中 `viewWillAppear` 方法的实现。
 
-首先，`UIViewController` 需要遵守 `SelfAware` 协议并且实现该协议的相关方法。
+首先，`UIViewController` 需要遵守 `SelfAware` 协议并且实现该协议的相关方法。
 
 
 ```swift
@@ -43,7 +43,7 @@ extension UIViewController: SelfAware {
 }
 ```
 
-然后，我需要去实现 `swizzleMethod` 方法。在执行方法交换的时候，我们应当使用 `dispatch_once` 。然而，从 swift 3.x 起，我们在 API 中已无法找到 `dispatch_once` 相关 API。那我们如何去解决呢？我们知道，swift 中的静态不可变变量底层实现上实际上就是和 `dispatch_once` 类似，所以，我们可以用静态不可变变量去实现。
+然后，我需要去实现 `swizzleMethod` 方法。在执行方法交换的时候，我们应当使用 `dispatch_once` 。然而，从 swift 3.x 起，我们在 API 中已无法找到 `dispatch_once` 相关 API。那我们如何去解决呢？我们知道，swift 中的静态不可变变量底层实现上实际上就是和 `dispatch_once` 类似，所以，我们可以用静态不可变变量去实现。
 
 ```swift
 @objc func swizzled_viewWillAppear(_ animated: Bool) {
