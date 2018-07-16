@@ -1,4 +1,4 @@
-# SwiftLoadHook
+# SwiftLoadHook [中文介绍](https://github.com/ZakariyyaSv/SwiftLoadHook/blob/master/README_CN.md)
 
 # Purpose
 
