@@ -17,7 +17,7 @@ Upon migrating a project to Swift 3.1, Xcode raises a warning:
 
 # Usage
 
-First, drop files under `Sources` to your project.
+First, drop files under `Sources` folder to your project.
 
 Then, your target class should conforms to `SelfAware` protocol, and implements the functions in `SelfAware` protocol.
 
@@ -25,7 +25,7 @@ Finally, write the code you want in `awake` function just like that in `Load()` 
 
 # Example
 
-This example is used to help you understand and use, you can find the code in the files under Example. In this example, I want to swizzle the IMP of function `viewWillAppear()` in `UIViewController`.
+This example is used to help you understand how to use, you can find the code in the files under `Example` folder. In this example, I want to swizzle the IMP of function `viewWillAppear()` in `UIViewController`.
 
 First, `UIViewController` should conform to `SelfAware` protocol and implement functions of the protocol.
 
@@ -42,7 +42,7 @@ extension UIViewController: SelfAware {
 }
 ```
 
-Then, I should implement `swizzleMethod` function. while swizzling methods, we should use `dispatch_once` in `Load()` or `Initialize()` function. However, since swift 3.x, we cannot find `dispatch_once` in API. How can we handle this? We can use `static let instance` to handle.
+Then, I should implement `swizzleMethod` function. while swizzling methods, we should use `dispatch_once` in `Load()` or `Initialize()` function. However, since swift 3.x, we cannot find `dispatch_once` in API. How can we handle this? We can use `static let instance` to handle with it.
 
 ```swift
 @objc func swizzled_viewWillAppear(_ animated: Bool) {
