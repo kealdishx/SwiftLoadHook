@@ -1,21 +1,21 @@
 # SwiftLoadHook
 
-# 目的
+### 目的
 
 此库以 hack 的方式来实现类似 `Load()` 或 `Initialize()` 方法的功能。
 
-# 由来
+### 由来
 
 当你将一个项目迁移到 swift 3.1 版本后， Xcode 会报如下的警告：
 
 > Objective-C 中的类方法 `Initialize` 也就是 swift 中的 `Initialize()` 方法，不保证在 swift 下一定会触发，并且在未来的版本中不被允许。
 
-# 要求
+### 要求
 
 - iOS 8.0+
 - swift 3.0+
 
-# 用法
+### 用法
 
 首先，将 `Sources` 目录下的所有文件添加到你的项目中。
 
@@ -23,7 +23,7 @@
 
 最后，在 `SelfAware` 协议中的 `awake()` 中实现你想要的功能逻辑。
 
-# 例子
+### 例子
 
 这个例子是用来帮助你去理解如何使用它，你在 `Example` 目录下可以找到这部分代码。在这个例子中，我想实现的逻辑是交换 `UIViewController` 中 `viewWillAppear` 方法的实现。
 
@@ -74,14 +74,14 @@ extension UIViewController: SelfAware {
   }
 ```
 
-# 感谢
+### 感谢
 
 @JORDAN SMITH
 
-# 引用
+### 引用
 
 [Handling the Deprecation of initialize()](http://jordansmith.io/handling-the-deprecation-of-initialize/)
 
-# 协议
+### 协议
 
 SwiftLoadHook 遵守 MIT 协议。查看 LICENSE 获取更多细节。
