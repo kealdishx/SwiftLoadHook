@@ -1,21 +1,21 @@
-# SwiftLoadHook [中文介绍](https://github.com/ZakariyyaSv/SwiftLoadHook/blob/master/README_CN.md)
+# SwiftLoadHook [中文介绍](https://github.com/iiiCeBlink/SwiftLoadHook/blob/master/README_CN.md)
 
-# Purpose
+## Purpose
 
 This lib uses a hack way to achieve similar functions as `Load()` or `initialize()`. 
 
-# Reason
+## Reason
 
 Upon migrating a project to Swift 3.1, Xcode raises a warning:
 
 > Method ‘initialize()’ defines Objective-C class method ‘initialize’, which is not guaranteed to be invoked by Swift and will be disallowed in future versions.
 
-# Requirements
+## Requirements
 
 - iOS 8.0+
 - swift 3.0+
 
-# Usage
+## Usage
 
 First, drop files under `Sources` folder to your project.
 
@@ -23,7 +23,7 @@ Then, your target class should conforms to `SelfAware` protocol, and implements 
 
 Finally, write the code you want in `awake` function just like that in `Load()` or `Initialize()`.
 
-# Example
+## Example
 
 This example is used to help you understand how to use, you can find the code in the files under `Example` folder. In this example, I want to swizzle the IMP of function `viewWillAppear()` in `UIViewController`.
 
@@ -73,17 +73,14 @@ Then, I should implement `swizzleMethod` function. while swizzling methods, we s
   }
 ```
 
-
-
-
-# Thanks
+## Thanks
 
 @JORDAN SMITH
 
-# Reference
+## Reference
 
 [Handling the Deprecation of initialize()](http://jordansmith.io/handling-the-deprecation-of-initialize/)
 
-# License
+## License
 
 SwiftLoadHook is released under the MIT license. See LICENSE for details.
